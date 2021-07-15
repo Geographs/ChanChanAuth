@@ -15,7 +15,7 @@ class Admin(object):
     def generate_license(self, license_type: str = "", license_length: str = "", user_type: str = ""):
         try:
             response = requests.get(
-                url="https://api.ccauth.app/api/v3/getkey",
+                url=f"https://api.ccauth.app/api/v3/getkey?key={self.apikey}",
                 headers={
                     "data": {
                         "type": license_type,
